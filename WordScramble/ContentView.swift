@@ -28,7 +28,7 @@ struct ContentView: View {
                     Image(systemName: "\($0.count).circle")
                     Text($0)
                 }
-                Text("Score: \(score)")
+                Text("Score: \(score)").font(.title3).fontWeight(.bold)
             }
             .navigationBarTitle(rootWord)
             .navigationBarItems(leading:
