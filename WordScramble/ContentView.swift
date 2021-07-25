@@ -10,6 +10,7 @@ struct ContentView: View {
     @State private var rootWord = ""
     @State private var newWord = ""
     @State private var score = 0
+    @State private var ltrCount = 0
     
     @State private var errorTitle = ""
     @State private var errorMessage = ""
@@ -68,13 +69,14 @@ struct ContentView: View {
         
 
         usedWords.insert(answer, at: 0)
-        let ltrCount = answer.count
+        ltrCount = answer.count
         score = score + ltrCount
 
         newWord = ""
     }
     
     func startGame() {
+        score = 0
         // 1. Find the URL for start.txt in our app bundle
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
             // 2. Load start.txt into a string
